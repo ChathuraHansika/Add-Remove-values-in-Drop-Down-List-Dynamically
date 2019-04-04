@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Add , Remove values in Drop Down List Dynamically</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><h1>Add , Remove values in Drop Down List Dynamically</h1></div>
+        <div>
+            <h1>
+                <select class="form-control" id="title_id" name="Title_name"  >
+                    <option value="YourTitle">YourTitle</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                </select>
+            </h1>
+        </div>
+        <div>
+            <h1>
+            <button type="submit" onclick="removeValuesDynamically()">Remove</button>
+            </h1>
+       
+            <h1>
+            <button type="submit" onclick="AddValuesDynamically()">Add</button>
+            </h1>
+        </div>
+        <script>
+            function removeValuesDynamically() {
+
+
+
+
+                //Remove Drop Down
+                $("#title_id option[value='YourTitle']").remove();
+                $("#title_id option[value='Mr.']").remove();
+                $("#title_id option[value='Mrs.']").remove();
+            }
+
+            function AddValuesDynamically() {
+                
+                // Create New Option.
+                var temp = "New Option";
+                var newOption = $('<option>');
+                newOption.attr('value', temp).text(temp);
+                
+                // Append that to the DropDownList.
+                $('#title_id').append(newOption);
+
+                // Select the Option.
+                $("#title_id > [value=" + customerdata.title + "]").attr("selected", "true");
+            }
+        </script>
+
+    </body>
+</html>
